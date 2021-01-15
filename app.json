@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "Aula1",
-    "slug": "Aula1",
+    "name": "Calculadora de Gorjeta",
+    "slug": "Calculadora de Gorjeta",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#EEE"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,7 +24,7 @@
       "package": "com.tipcalculator",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#EEE"
       }
     },
     "web": {
