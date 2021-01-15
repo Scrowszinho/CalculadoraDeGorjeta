@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {KeyboardAvoidingView, Platform} from 'react-native';
+import {Platform} from 'react-native';
 import styled, { withTheme } from 'styled-components/native';
 
 
@@ -29,11 +29,11 @@ margin-top:10px;
 `;
 
 const ResultArea = styled.View`
-margin-top:30px;
+margin-top:150px;
 width:100%;
 justify-content:center;
 background-color:#EEE;
-padding:50px;
+padding:80px;
 align-items:center;
 `; 
 
@@ -72,6 +72,13 @@ align-items:center;
 padding:20px;
 `;
 
+const KeyboardArea = styled.KeyboardAvoidingView`
+flex:1;
+width:100%;
+align-items:center;
+justify-content:center;
+`;
+
 export default function App() {
   const [bill, setBill] = useState('');
   const [tip, setTip] = useState(0);
@@ -96,7 +103,7 @@ export default function App() {
     value={bill} onChangeText={t=>setBill(t)} 
     />
 
-    <PctArea>
+   
       <AreaBotao>
       <PctItem  onPress={ () => setPct(5)}><Text>5%</Text></PctItem>
       <PctItem  onPress={ () => setPct(10)}><Text>10%</Text></PctItem>
@@ -104,8 +111,8 @@ export default function App() {
       <PctItem  onPress={ () => setPct(20)}><Text>20%</Text></PctItem>
       </AreaBotao>
       <ButtonCalc title={`Calcular ${pct} %`} onPress={calc} />
-    </PctArea>
 
+      <KeyboardArea behavior={Platform.OS == 'ios' ? 'padding' : null }>
 
     {tip > 0 &&
     <ResultArea>
@@ -117,6 +124,7 @@ export default function App() {
       <ResultItem>R$ {(parseFloat(bill)+tip).toFixed(2)}</ResultItem>
     </ResultArea>
     }
+    </KeyboardArea>
     </Page>
   );
 }
