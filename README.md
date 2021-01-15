@@ -8,7 +8,7 @@ automática, a gorjeta a ser recebida. <br />
 
 <div align="center">
 <img src="./github/gif.gif">
-</div>
+</div> <br />
 # 🔧 Ferramentas
 
 * <a href="https://reactnative.dev/">React-Native</a>
